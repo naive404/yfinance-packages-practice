@@ -58,9 +58,9 @@ class HistoricalData:
 
         # Calculate the RS and RSI
         rs = avg_gain / avg_loss
-        self.metrics['RSI'] = 100 - (100 / (1 + rs))
+        self.metrics[f'RSI{window}'] = 100 - (100 / (1 + rs))
 
         # Calculate RSI and add it to the DataFrame
 
         # Display the updated dataframe
-        print(self.metrics[['RSI']])
+        print(self.metrics[[f'RSI{window}']])
